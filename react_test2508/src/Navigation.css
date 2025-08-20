@@ -1,0 +1,86 @@
+.Nav {
+
+  height: 56px;       
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  background: #657054ff;
+  padding: 0 16px;  
+}
+
+.sticky-shell {
+   position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+   background: #fff;
+   align-items: center;
+  }
+
+.NavList {
+    list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+
+  flex-wrap: nowrap;  
+  white-space: nowrap; 
+}
+
+
+.NavItem { position: relative; }
+
+.NavLink {
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.NavLink:hover {
+  background-color: #cadc43ff;
+  outline: 1px solid red;
+  
+}
+
+
+.DropdownMenu {
+    position: absolute;
+  top: 100%;
+  left: 0;
+  width: 160px;
+  background: #657054ff;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: none;
+
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+
+  transition: max-height 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* FIX: 여기! NavItem hover 시 .DropdownMenu를 보이게 */
+.NavItem:hover .DropdownMenu {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+.DropdownLink {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.DropdownLink:hover {
+  background-color: #555;
+}
