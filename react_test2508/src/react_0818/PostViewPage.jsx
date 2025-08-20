@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     width: calc(100% - 32px);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
   
     `;
