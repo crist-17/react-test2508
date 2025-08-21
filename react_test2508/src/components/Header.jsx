@@ -6,7 +6,7 @@ export default function Header() {
       <div className="inner">
         {/* ✅ 로고 */}
         <Link to="/" className="logo-link" aria-label="홈">
-         <img src="/images/s01_rogo.webp" alt="로고" className="logo"
+         <img src={`${import.meta.env.BASE_URL}images/s01_rogo.webp`} alt="로고" className="logo"
          style={{ width: 140, height: 'auto', display: 'block', opacity: 1 }}
          />
         </Link>

@@ -20,16 +20,16 @@ function HomeLanding() {
       {/* B. 슬라이드 */}
       <section className="slide">
         <ul className="slide-track">
-          <li style={{ backgroundImage: "url(/images/bg.jpg)" }}>
+          <li style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/bg.jpg)` }}>
             <div className="caption"><h3>통일전망대</h3><p>gop구경해요</p></div>
           </li>
-          <li style={{ backgroundImage: "url(/images/img.jpg)" }}>
+          <li style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/img.jpg)` }}>
             <div className="caption"><h3>유채꽃호수</h3><p>좋은날씨 꽃구경</p></div>
           </li>
-          <li style={{ backgroundImage: "url(/images/activity.jpg)" }}>
+          <li style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/activity.jpg)` }}>
             <div className="caption"><h3>영월하늘날기</h3><p>하늘로가다</p></div>
           </li>
-          <li style={{ backgroundImage: "url(/images/bg.jpg)" }}>
+          <li style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/bg.jpg)` }}>
             <div className="caption"><h3>통일전망대</h3><p>gop구경해요</p></div>
           </li>
         </ul>
@@ -56,11 +56,11 @@ function HomeLanding() {
             </ul>
           ) : (
             <div className="gallery">
-              <figure style={{ backgroundImage: "url(/images/fruit.jpg)" }} />
-              <figure style={{ backgroundImage: "url(/images/giraffe.jpg)" }} />
-              <figure style={{ backgroundImage: "url(/images/salad.jpg)" }} />
-              <figure style={{ backgroundImage: "url(/images/red.jpg)" }} />
-              <figure style={{ backgroundImage: "url(/images/rice.jpg)" }} />
+              <figure style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/fruit.jpg)` }} />
+              <figure style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/giraffe.jpg)` }} />
+              <figure style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/salad.jpg)` }} />
+              <figure style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/red.jpg)` }} />
+              <figure style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/rice.jpg)` }} />
             </div>
           )}
         </div>
@@ -127,7 +127,7 @@ export default function App() {
       <footer className="footer">
         <div className="inner">
           <div className="f-left">
-            <img src="/images/s01_rogo.webp" alt="로고"
+            <img src={`${import.meta.env.BASE_URL}images/s01_rogo.webp`} alt="로고"
               className="logo-gray"
               style={{ width: 140, height: 'auto', display: 'block', opacity: 1 }}
             />
