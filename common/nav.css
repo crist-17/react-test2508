@@ -1,0 +1,16 @@
+.global-nav {
+  position: sticky; top: 0; z-index: 9999;
+  background: #fff; border-bottom: 1px solid #eee;
+  font: 14px/1.2 system-ui; color: #222;
+}
+.gn-wrap {
+  max-width: 1000px; margin: 0 auto; padding: 10px 16px;
+  display: flex; gap: 16px; align-items: center; justify-content: space-between;
+}
+.gn-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.gn-link {
+  padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px;
+  text-decoration: none; color: #222;
+}
+.gn-link:hover { background: #f7f7f7; }
+.gn-link.active { border-color: #000; font-weight: 600; }
