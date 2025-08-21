@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Model from "./components/Model";
 
-// ✅ 홈 전용 섹션(슬라이드/공지/추천)
+//  홈 전용 섹션(슬라이드/공지/추천)
 import { useState } from "react";
 function HomeLanding() {
   const [tab, setTab] = useState("notice");
@@ -99,7 +99,7 @@ function HomeLanding() {
   );
 }
 
-// ✅ 미니블로그 라우트
+//  미니블로그 라우트
 import React_0818 from "./react_0818/React_0818";
 
 export default function App() {
