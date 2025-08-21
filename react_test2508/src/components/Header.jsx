@@ -4,10 +4,16 @@ export default function Header() {
   return (
     <header className="header">
       <div className="inner">
-        {/* 상단 메뉴(왼쪽) */}
+        {/* ✅ 로고 */}
+        <Link to="/" className="logo-link" aria-label="홈">
+         <img src="/images/s01_rogo.webp" alt="로고" className="logo"
+         style={{ width: 140, height: 'auto', display: 'block', opacity: 1 }}
+         />
+        </Link>
+
+        {/* ✅ 네비(gnb) */}
         <nav className="gnb" aria-label="메인 메뉴">
           <ul>
-            {/* 각 항목 hover 시 본인 서브메뉴만 부드럽게 표시 */}
             <li className="has-sub">
               <span className="mitem">소장처별</span>
               <ul className="submenu">
@@ -44,16 +50,12 @@ export default function Header() {
                 <li><a href="#">그 외</a></li>
               </ul>
             </li>
-            {/* (예) 네 기존 라우트로 가는 항목 하나 유지 */}
+            {/* (네비게이션으로 이동) */}
             <li>
-              <Link to="/react_0818">React_0818</Link>
+              <Link to="/react_0818">미니블로그</Link>
             </li>
           </ul>
         </nav>
-
-        {/* 로고(오른쪽) — 색상은 과제 주제에 맞게 변경 */}
-        {/* ▼ Header/로고 이미지 경로 바꾸기 */}
-        <img src="/* /logo-header.png */" alt="로고" className="logo" />
       </div>
     </header>
   );

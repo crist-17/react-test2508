@@ -1,3 +1,23 @@
+html, body, #root { height: 100%; }
+
+:root{ --page-max: 1440px; }
+
+/* 그리드 셸로 가로 중앙 고정 */
+body{
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr min(100%, var(--page-max)) 1fr;
+}
+
+/* 가운데 열(2번)에 내용 얹기 */
+.header, .wrap, .footer{
+  grid-column: 2;
+  width: 100%;
+}
+
+
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
