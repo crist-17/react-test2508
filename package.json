@@ -1,19 +1,20 @@
 {
-  "name": "react_test2508",
+  "name": "react-test2508",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist -b way-submenu",
-    "build:main": "vite build --base=/react-test2508/main/",
-  "build:way": "vite build --base=/react-test2508/way-submenu/",
-  "deploy:main": "npm run build:main && gh-pages -d dist -b gh-pages --dest main -m \"deploy main\" --add",
-  "deploy:way":  "npm run build:way  && gh-pages -d dist -b gh-pages --dest way-submenu -m \"deploy way\" --add"
-  },
+  "dev": "vite",
+
+  "build:main": "vite build --base=/react-test2508/main/",
+  "build:way":  "vite build --base=/react-test2508/way-submenu/",
+  "postbuild":  "shx cp dist/index.html dist/404.html",
+
+  "deploy:root": "mkdir -p .gh-root && shx cp branches.html .gh-root/index.html && gh-pages -d .gh-root -b gh-pages -m 'deploy root index'",
+
+  "deploy:main": "npm run build:main && npm run postbuild && gh-pages -d dist -b gh-pages --dest main --add -m 'deploy main'",
+  "deploy:way":  "npm run build:way  && npm run postbuild && gh-pages -d dist -b gh-pages --dest way-submenu --add -m 'deploy way'"
+},
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "react": "^19.1.1",
