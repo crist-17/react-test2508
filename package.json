@@ -8,7 +8,11 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist -b way-submenu"
+    "deploy": "gh-pages -d dist -b way-submenu",
+    "build:main": "vite build --base=/react-test2508/main/",
+  "build:way": "vite build --base=/react-test2508/way-submenu/",
+  "deploy:main": "npm run build:main && gh-pages -d dist -b gh-pages --dest main -m \"deploy main\" --add",
+  "deploy:way":  "npm run build:way  && gh-pages -d dist -b gh-pages --dest way-submenu -m \"deploy way\" --add"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
