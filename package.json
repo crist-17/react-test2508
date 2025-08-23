@@ -3,17 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
+ "scripts": {
     "dev": "vite",
 
-    "build:main": "vite build --base=/react-test2508/main/",
-    "build:way":  "vite build --base=/react-test2508/way-submenu/",
-    "postbuild":  "node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\"",
+    "build:main": "vite build --base=/react-test2508/main/ --outDir dist-main && node -e \"require('fs').copyFileSync('dist-main/index.html','dist-main/404.html')\"",
+    "build:way":  "vite build --base=/react-test2508/way-submenu/ --outDir dist-way && node -e \"require('fs').copyFileSync('dist-way/index.html','dist-way/404.html')\"",
 
-    "deploy:root": "node -e \"const fs=require('fs'),p='.gh-root'; if(!fs.existsSync(p)) fs.mkdirSync(p); fs.copyFileSync('index.html', p+'/index.html');\" && gh-pages -d .gh-root -b gh-pages -m 'deploy root index'",
+    "deploy:root": "node -e \"const fs=require('fs'),p='.gh-root'; if(fs.existsSync(p)) fs.rmSync(p,{recursive:true,force:true}); fs.mkdirSync(p); fs.copyFileSync('index.html', p+'/index.html');\" && gh-pages -d .gh-root -b gh-pages -m 'deploy root index'",
 
-    "deploy:main": "npm run build:main && npm run postbuild && gh-pages -d dist -b gh-pages --dest main --add -m 'deploy main'",
-    "deploy:way":  "npm run build:way  && npm run postbuild && gh-pages -d dist -b gh-pages --dest way-submenu --add -m 'deploy way'"
+    "deploy:main": "npm run build:main && gh-pages -d dist-main -b gh-pages --dest main --add -m 'deploy main'",
+    "deploy:way":  "npm run build:way  && gh-pages -d dist-way  -b gh-pages --dest way-submenu --add -m 'deploy way'"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
